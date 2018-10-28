@@ -1,6 +1,6 @@
-# Delphi
+# ReactNative
 
-#### Nav / Drawer / BottomTab - Pages - الواجهات في الرياكت ناتيف
+#### image cercle - [ React native ] - الصورة في شكل دائري
 
 ## Platform Support
 
@@ -10,19 +10,12 @@
 |React.Android|
 |React.UWP|
 
-<p>
-  StackNavigator React    -> NavigationPage Xamarin
-  DrawerNavigator React   -> MasterDetailPage Xamarin
-  TabNavigator React      -> TabbedPage  Xamarin
-  </p>
 
 <p align="center">
-   <img src="https://imgur.com/Evfg4Me.png" alt="badges" style="margin:auto">
-   <img src="https://i.imgur.com/vk2p7mM.png" alt="badges" style="margin:auto">
-   <img src="https://i.imgur.com/IgBqHqc.png" alt="badges" style="margin:auto">
+   <img src="https://imgur.com/r6aWPt1.png" alt="badges" style="margin:auto">
 </p>
 
 
 <p>
-  https://www.youtube.com/watch?v=NhGkqjGUmrA&index=6&list=PLfVdvKscEioNsjW5coC7XiugINCiHY-fG
+  https://www.youtube.com/watch?v=SC17O5XAx1U&list=PLfVdvKscEioNsjW5coC7XiugINCiHY-fG&index=7
 </p>
