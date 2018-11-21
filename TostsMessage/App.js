@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   },
  
   SnackBarContaint:{
+    position:'absolute',
     padding:15,
     margin:15,
     justifyContent: 'flex-end',
