@@ -1,47 +1,98 @@
 import React from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import {List,FlatList,ListItem, Text,TextInput,Button, StyleSheet, View } from 'react-native';
 import { SQLite } from 'expo';
 
 
 export default class App extends React.Component {
   
-  btnCreatDBClick = ()=>{
+  constructor(props){
+    super(props);
 
-    const db = SQLite.openDatabase('Baby.db');
-    console.log('1- Create Database');
+    this.state = { 
+      Id:0,
+      FirstName:"",
+      LastName:"",  
+      Users:[],
+    };  
 
-    db.transaction(
+    console.log("----------- 1- Create/Open DataBase---------------");
+    const db = SQLite.openDatabase('MyDatabase.db');
+
+    console.log("----------- 2- Create/Open Table User---------------");
+    db.transaction(      
       tx => {
-            console.log("2- Create Table User");
-            tx.executeSql("create table if not exists User (Id integer primary key not null, Name text);");
-
-            console.log("3- Insert row in User");
-            tx.executeSql("insert into User (Id , Name) values (3,'Raouf');");
-
-            console.log("4- select User");
-            tx.executeSql('select * from User', [] , (_, { rows }) => {
-             console.log(JSON.stringify(rows));
+              tx.executeSql("create table if not exists User (id integer primary key not null,FirstName text,LastName text);");
+              tx.executeSql('select * from User', [] , (_, { rows }) => {
+                this.setState({Users: rows._array});
+                console.log(JSON.stringify(this.state.Users));
+                });
             }
-        );
-    });
+    );
+  }
 
+  btnAddClick = ()=>{
+    console.log("----------- 4- Open DataBase---------------");
+    const db = SQLite.openDatabase('MyDatabase.db');
+    
+    console.log("----------- 5- Inser New User and Select All ---------------");
+    db.transaction(      
+      tx => {
+            //console.log("FirstName : ", this.state.FirstName);
+            //console.log("LastName  : ", this.state.LastName);
+
+           // console.log("4- Insert row in User");
+            tx.executeSql("insert into User (Id,FirstName,LastName) values (1,'zekiri','abdelali')");
+
+            //console.log("5- select User");
+            tx.executeSql('select * from User', [] , (_, { rows }) => {
+              this.setState({courses: rows._array});
+             //console.log(JSON.stringify(rows));
+                }
+             );
+            }
+      );
   }
 
   render() {
     return (
       <View style={styles.container}>
-      <Button title='SQLITE' onPress={this.btnCreatDBClick}></Button>
+      
+        <Text value={this.state.Id} />
+        <TextInput style={styles.input}  value={this.state.FirstName}   onChangeText={firstName =>  this.setState({ FirstName : firstName })} />
+        <TextInput style={styles.input}  value={this.state.LastName}    onChangeText={lastName =>   this.setState({ LastName : lastName })} />
+        <Button title='Add' onPress={this.btnAddClick}></Button>
+        <List>
+        <FlatList 
+              data={this.state.Users} 
+              renderItem={ ({item}) => (
+                 <ListItem roundAvatar 
+                    title={item.FirstName} 
+                    subtitle = {item.FlatList}
+                    avatar={require('./assets/image.png')}
+                  />
+                )} 
+                keyExtractor={() => item.Id}
+        />
+
+      </List>
       </View>
-    );
-  }
-
+      )
+  }  
 }
-
+  
 const styles = StyleSheet.create({
   container: {
+    paddingTop:20,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input:{
+    padding: 5,
+    height: 40,
+    width:200,
+    borderColor: 'gray',
+    borderWidth: 1,
+  }
 });
