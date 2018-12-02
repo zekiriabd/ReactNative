@@ -12,7 +12,7 @@
 
    
 <p align="center">
-   <img src="https://i.imgur.com/swbMmcT.gif" alt="badges" style="margin:auto">
+   <img src="https://i.imgur.com/ayRH5gL.gif" alt="badges" style="margin:auto">
 </p>
 
 
