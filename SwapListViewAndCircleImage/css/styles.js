@@ -7,20 +7,21 @@ export default StyleSheet.create({
     container: {
           flex: 1,
           backgroundColor:'#FFF',
-          paddingTop:40,   
+          paddingTop: 40,
+          paddingLeft: 10,
+          paddingRight: 10,
+          paddingBottom: 10,  
         },
        
         itemTitle:{
           fontSize:15,
           color:'#000',
-          width:'100%',
           marginLeft:20,
         },
 
         itemText:{
           fontSize:12,
           color:'#666',
-          width:'100%',
           marginLeft:20,
         },
 

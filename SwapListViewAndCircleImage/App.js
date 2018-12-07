@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
-import {Image, ListView,  Text, TouchableOpacity, TouchableHighlight, View } from 'react-native';
+import React from 'react';
+import {Image, ListView,  Text, TouchableOpacity, View } from 'react-native';
 
 import SwipeListView from './components/SwipeListView';
 import StyleSheet from './css/styles';
-
-
-import 'prop-types';
 
 export default class App extends React.Component {
 
