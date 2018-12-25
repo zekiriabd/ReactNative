@@ -11,7 +11,7 @@
 
 
 <p align="center">
-   <img src="https://i.imgur.com/hn3bRmV.gif" alt="badges" style="margin:auto">
+   <img src="http://i.imgur.com/hn3bRmV.gif" alt="badges" style="margin:auto">
 </p>
 
 
