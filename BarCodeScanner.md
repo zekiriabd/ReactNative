@@ -1,6 +1,6 @@
 # ReactNative
 
-#### SnackBar / ToastMessage في الرياكت ناتيف
+#### BarCodeScanner in React-Native قراءة البار كود بالرياكت نتيف
 
 ## Platform Support
 
@@ -8,14 +8,13 @@
 | ------------------- | :------------------: |
 |React.iOS|
 |React.Android|
-|React.UWP|
 
 
 <p align="center">
-   <img src="https://i.imgur.com/sRN6IpA.gif" alt="badges" style="margin:auto">
+   <img src="http://i.imgur.com/hn3bRmV.gif" alt="badges" style="margin:auto">
 </p>
 
 
 <p>
-  https://www.youtube.com/watch?v=tAcytR8y_Do&list=PLfVdvKscEioNsjW5coC7XiugINCiHY-fG&index=16
+  https://www.youtube.com/watch?v=M3xc3PqunFE&t=8s&index=27&list=PLfVdvKscEioNsjW5coC7XiugINCiHY-fG
 </p>
