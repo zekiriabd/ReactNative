@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Chromelink Solutions">
+    <meta name="Chromelink Solutions" content="">
+    <title>chartjs vault
+</title>
+
+<script src="js/highcharts.js"></script>
+
+<body>
+<div id="container" style="margin: 0px auto; width: 100%; height: 500px;"></div>
+
+<script>
+
+ window.addEventListener("error", handleWindowError); function handleWindowError(e) {alert(e.error)}
+ 
+function Drawchart(){
+
+    Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Browser market shares. January, 2018'
+    },
+    subtitle: {
+        text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+    },
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Total percent market share'
+        }
+
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:.1f}%'
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    },
+
+    "series": [
+        {
+            "name": "Browsers",
+            "colorByPoint": true,
+            "data": [
+                {
+                    "name": "Chrome",
+                    "y": 62.74,
+                    "drilldown": "Chrome"
+                },
+                {
+                    "name": "Firefox",
+                    "y": 10.57,
+                    "drilldown": "Firefox"
+                },
+                {
+                    "name": "Internet Explorer",
+                    "y": 7.23,
+                    "drilldown": "Internet Explorer"
+                }                
+            ]
+        }
+    ]         
+});
+}
+</script>
+
+
+
+
+  </body>
+
+</html>
