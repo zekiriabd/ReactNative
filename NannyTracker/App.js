@@ -7,6 +7,8 @@ import { Constants} from 'expo';
 import HomeScreen from './screens/HomeScreen'
 import SettingsScreen from './screens/SettingsScreen';
 
+
+
 export default class App extends React.Component {
   render() {
     return (
@@ -33,9 +35,8 @@ const CustomDrawerComponent = (props) => (
 
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Home : HomeScreen,
-    Settings : SettingsScreen,
-    
+    "Mes Bébe" : SettingsScreen,
+    "Home" : HomeScreen,
   },
   {
     contentComponent : CustomDrawerComponent,

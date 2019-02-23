@@ -4,8 +4,9 @@ import { Header, Left, Icon } from "native-base";
 import { Constants} from 'expo';
 
 class HomeScreen extends Component{
+
   static navigationOptions = {
-    drawerTcon : ({tintColor}) => (
+    drawerIcon : ({tintColor}) => (
       <Icon name="home" style={{ fontSize:24, color:tintColor}} />
     )
   }
@@ -31,5 +32,6 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: 'blue',
+      paddingTop: Constants.statusBarHeight,
     },
 });
