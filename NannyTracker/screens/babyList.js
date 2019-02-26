@@ -3,7 +3,8 @@ import { View,Text,StyleSheet,Image } from "react-native";
 import { Header, Left, Icon } from "native-base";
 import { Constants} from 'expo';
 
-class SettingsScreen extends Component{
+
+class BabyList extends Component{
   
   static navigationOptions = {
     drawerIcon : ({tintColor}) => (
@@ -26,7 +27,9 @@ class SettingsScreen extends Component{
    } 
 }
 
-export default SettingsScreen;
+export default BabyList;
+
+
 const styles = StyleSheet.create({
   
     container: {
