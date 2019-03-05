@@ -1,22 +1,24 @@
 
 import React from 'react';
-import {ImageBackground,StyleSheet,Image,Text,SafeAreaView,ScrollView} from 'react-native';
+import {ImageBackground,Image,Text,SafeAreaView,ScrollView} from 'react-native';
 import {createDrawerNavigator,DrawerItems} from 'react-navigation';
+import StyleSheet from './css/App_css';
 
 /* import screens ============================*/
-import HomeScreen from './screens/HomeScreen'
+import BabyEdit from './screens/babyEdit'
 import BabyList from './screens/babyList';
+
 /*============================================*/
 
 
 /* FlyoutHeader =============================*/
 const FlyoutHeader = (props) => (
   <SafeAreaView style={{ flex:1 }}>
-      <ImageBackground source={require('./assets/background.jpg')}  style={styles.bgimgcss}>
-      <Image  source={require('./assets/zekiri.jpg')} style={styles.userimgcss}  />
-      <Text style={styles.lbusercss}>zekiri abdelali</Text>
+      <ImageBackground source={require('./assets/background.jpg')}  style={StyleSheet.bgimgcss}>
+      <Image  source={require('./assets/zekiri.jpg')} style={StyleSheet.userimgcss}  />
+      <Text style={StyleSheet.lbusercss}>zekiri abdelali</Text>
     </ImageBackground>
-      <ScrollView style={styles.container}>
+      <ScrollView style={StyleSheet.container}>
         <DrawerItems {...props}/>
       </ScrollView>
   </SafeAreaView>
@@ -28,7 +30,7 @@ const FlyoutHeader = (props) => (
 const ShellMainPage = createDrawerNavigator(
   {
     "Mes Bébé" : BabyList,
-    "Nouvau Bébé" : HomeScreen,
+    "Nouvau Bébé" : BabyEdit,
   },
   {
     contentComponent : FlyoutHeader,
@@ -51,32 +53,3 @@ export default class App extends React.Component {
     );
   }
 }
- 
-
-
-/* Css styles =============================*/
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor:'#FFE3FA',
-  },
-
-  bgimgcss: {
-    height: 150,
-    justifyContent:'flex-end', 
-    paddingLeft:10,
-    paddingBottom:10
-  },
-    
-  userimgcss : { 
-    height:60 , 
-    width:60 , 
-    borderRadius:30,
-  },
-  
-  lbusercss: { 
-    color:'white', 
-    fontSize:14 
-  }
-
-});
-/*========================================*/
