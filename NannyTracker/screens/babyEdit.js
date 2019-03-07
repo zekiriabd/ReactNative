@@ -1,14 +1,18 @@
 import React,{ Component } from "react";
-import { TouchableOpacity,View,Image } from "react-native";
-import { Header, Left, Icon, Label } from "native-base";
+import { TouchableOpacity,View,Image,TextInput,Text } from "react-native";
+import { DatePicker,Header, Left, Icon, Label} from "native-base";
 import { ImagePicker, Permissions } from 'expo';
 
 
 import StyleSheet from '../css/babyEdit_css';
 
 class BabyEdit extends Component{
-
-  state = { image: null }
+  constructor(props) {
+    super(props);
+    this.state = { 
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+    }
+  }
 
   static navigationOptions = {
     drawerIcon : ({tintColor}) => (
@@ -41,10 +45,12 @@ class BabyEdit extends Component{
     }
   };
 
+  setDate(newDate) {
+
+  }
 
 
    render(){
-       let { image } = this.state;
        return(
          <View style={StyleSheet.page}>
             <Header style={StyleSheet.header}>
@@ -55,19 +61,29 @@ class BabyEdit extends Component{
            </Header>
 
            <View style={StyleSheet.container}>
-                  <View style={{flex:1}}> 
-                  
-                  <TouchableOpacity onPress={this.btnGalleryClicked}>
-                  
-                    <Image  source={{ uri : image }} style={StyleSheet.babyimgcss}  />
+                  <View style={{height:110,alignItems:'center',justifyContent:'center'}}> 
+                  <TouchableOpacity onPress={this.btnCameraClicked}>
+                    <Image  source={{ uri : this.state.image }} style={StyleSheet.babyimgcss}  />
                     <Image  source={require('../assets/Photo.png')} style={StyleSheet.btncamcss}  />
                   </TouchableOpacity>
                   </View>
-                  <View style={{flex:4,backgroundColor:'#FFE3FA',margin:15, borderRadius: 10,}}> 
-                      
+                  <View style={StyleSheet.formcss}> 
+                  <TextInput style={StyleSheet.input} placeholder='Nom'/>
+                  <TextInput style={StyleSheet.input} placeholder='Prénom'/>
+                  <TextInput style={StyleSheet.input} placeholder='Date de naissance'/>
+                  <TextInput style={StyleSheet.input} placeholder='XXXXXXXXXX'/>
+                  <TextInput style={StyleSheet.input} placeholder='YYYYYYYYYYYYYYY'/>
+                  <DatePicker 
+                        animationType={"fade"}
+                        androidMode={"default"}
+                        placeHolderText="Select date"
+                        textStyle={{ color: "#0000FF" }}
+                        placeHolderTextStyle={{ color: "#d3d3d3" }}
+                        onDateChange={this.setDate}
+                      />
                   </View>
            
-           </View>
+           </View> 
          </View>
        )
    } 

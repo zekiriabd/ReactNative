@@ -20,16 +20,15 @@ export default StyleSheet.create({
       height:100 , 
       width:100 , 
       borderRadius:50,
+      marginTop:10,
     },
     btncamcss: { 
-      height:25 , 
-      width:25 , 
-      borderRadius:11,
-    },
-
-        
-
-
+      height:30 , 
+      width:30 , 
+      marginLeft:70,
+      marginTop:-20,
+      
+    },    
     header:{
         backgroundColor:'#EF6FB9',
     },
@@ -43,5 +42,21 @@ export default StyleSheet.create({
     menuIcon : {
         alignContent:'flex-start',
         color:'white'
-    } 
+    },
+    input:{
+      padding: 5,
+      borderColor: 'white',
+      borderWidth: 1,
+      borderRadius:5,
+      backgroundColor:'white',
+      marginTop:20
+    },
+    formcss:{
+      flex:1,
+      backgroundColor:'#FFE3FA',
+      margin:15, 
+      borderRadius: 10,
+      padding:20
+    }
+    
   });
