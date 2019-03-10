@@ -37,7 +37,7 @@ export default StyleSheet.create({
         color:'white',
         fontSize:18,
         fontWeight: 'bold',
-        margin: 10
+        margin: 10,
     },
     menuIcon : {
         alignContent:'flex-start',
@@ -57,6 +57,14 @@ export default StyleSheet.create({
       margin:15, 
       borderRadius: 10,
       padding:20
+    },    
+    btnSavecss:{
+      backgroundColor:'#EF6FB9',
+      borderRadius: 10,
+      height:35,
+      color:'white',
+      fontWeight:'bold',
+      textAlign: 'center',
+      textAlignVertical: 'center',
     }
-    
   });

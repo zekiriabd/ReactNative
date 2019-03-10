@@ -18,7 +18,9 @@ class BabyList extends Component{
              <Left  style={{flex:1}}> 
                <Icon name="menu" onPress={()=>this.props.navigation.openDrawer()} style={StyleSheet.menuIcon}/>
              </Left>
-             <Label style={StyleSheet.headerTitel}>Nanny Tracker</Label>
+             <Left  style={{flex:2}}> 
+                <Label style={StyleSheet.headerTitel}>Nanny Tracker</Label>
+             </Left>
            </Header>
 
            <View style={StyleSheet.container}>

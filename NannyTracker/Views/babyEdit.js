@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
-import { TouchableOpacity,View,Image,TextInput,Text } from "react-native";
-import { DatePicker,Header, Left, Icon, Label} from "native-base";
+import { Text,Button,TouchableOpacity,View,Image,TextInput } from "react-native";
+import { Root,DatePicker,Header, Left, Icon, Label,ActionSheet} from "native-base";
 import { ImagePicker, Permissions } from 'expo';
 
 
@@ -10,7 +10,7 @@ class BabyEdit extends Component{
   constructor(props) {
     super(props);
     this.state = { 
-    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+    image: "",
     }
   }
 
@@ -45,25 +45,42 @@ class BabyEdit extends Component{
     }
   };
 
+  ActionSheetshow = async () => {
+    ActionSheet.show({ 
+      options: ["Take Photo", "Choose from Library", "Cancel"], cancelButtonIndex: 2, title: "Select Avatar"},
+      buttonIndex => {
+                switch (buttonIndex) {
+                  case 0:  this.btnCameraClicked(); break;
+                  case 1:  this.btnGalleryClicked(); break;
+                }
+      }
+    )
+  }
+
   setDate(newDate) {
 
   }
 
 
+
    render(){
        return(
+        <Root>
          <View style={StyleSheet.page}>
             <Header style={StyleSheet.header}>
              <Left  style={{flex:1}}> 
                <Icon name="menu" onPress={()=>this.props.navigation.openDrawer()} style={StyleSheet.menuIcon}/>
              </Left>
-             <Label style={StyleSheet.headerTitel}>Nanny Tracker</Label>
+             <Left  style={{flex:2}}> 
+                <Label style={StyleSheet.headerTitel}>Nanny Tracker</Label>
+             </Left>
            </Header>
 
            <View style={StyleSheet.container}>
-                  <View style={{height:110,alignItems:'center',justifyContent:'center'}}> 
-                  <TouchableOpacity onPress={this.btnCameraClicked}>
-                    <Image  source={{ uri : this.state.image }} style={StyleSheet.babyimgcss}  />
+              <View style={{height:110,alignItems:'center',justifyContent:'center'}}> 
+
+              <TouchableOpacity onPress={this.ActionSheetshow} >
+                    <Image  source={(this.state.image==="") ?  require('../assets/EmptyPhoto.png'): {uri : this.state.image } } style={StyleSheet.babyimgcss}  />
                     <Image  source={require('../assets/Photo.png')} style={StyleSheet.btncamcss}  />
                   </TouchableOpacity>
                   </View>
@@ -80,16 +97,17 @@ class BabyEdit extends Component{
                         textStyle={{ color: "#0000FF" }}
                         placeHolderTextStyle={{ color: "#d3d3d3" }}
                         onDateChange={this.setDate}
-                      />
-                  </View>
-           
+                  />
+                  
+                  <TouchableOpacity onPress={()=> alert('Save')}><Text style = {StyleSheet.btnSavecss}>Save</Text></TouchableOpacity>
+
+                  </View>           
            </View> 
          </View>
+         </Root>
        )
    } 
 }
-
-//</View><TouchableOpacity onPress={this.btnCameraClicked}>
 
 export default BabyEdit;
 
