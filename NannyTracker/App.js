@@ -4,9 +4,9 @@ import {ImageBackground,Image,Text,SafeAreaView,ScrollView} from 'react-native';
 import {createDrawerNavigator,DrawerItems} from 'react-navigation';
 import StyleSheet from './css/App_css';
 
-/* import screens ============================*/
-import BabyEdit from './screens/babyEdit'
-import BabyList from './screens/babyList';
+/* import Views ============================*/
+import BabyEdit from './Views/babyEdit'
+import BabyList from './Views/babyList';
 
 /*============================================*/
 
