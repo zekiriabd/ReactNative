@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "amd",
+    "outDir": "./build",
+    "baseUrl": "",
+    "jsx": "react",
+    "sourceMap": true,
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
