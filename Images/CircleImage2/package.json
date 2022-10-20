@@ -12,7 +12,7 @@
   "dependencies": {
     "@types/react": "^16.8.16",
     "@types/react-native": "^0.57.51",
-    "expo": "^30.0.1",
+    "expo": "^46.0.16",
     "jest": "^24.8.0",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
